@@ -1,0 +1,23 @@
+{
+  "name": "los-pinguinos",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@svgdotjs/svg.draggable.js": "^3.0.3",
+    "@svgdotjs/svg.js": "^3.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.3.3",
+    "eslint": "^8.55.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  }
+}
