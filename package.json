@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@svgdotjs/svg.draggable.js": "^3.0.3",
-    "@svgdotjs/svg.js": "^3.2.0"
+    "@svgdotjs/svg.js": "^3.2.0",
+    "vite-plugin-zip-pack": "^1.0.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.3.3",
+    "@types/node": "^20.10.3",
     "eslint": "^8.55.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
