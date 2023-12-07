@@ -22,7 +22,7 @@ export function mountain(props: MountainProps) {
 
 function baseMountain({ theme }: MountainProps) {
   const size = methods.random(50, 80)
-  const treeGroup = SVG().group()
+  const mountainGroup = SVG().group()
   const vertices: ArrayXY[] = [
     [0, 0],
     [size / 2, -size],
@@ -30,14 +30,14 @@ function baseMountain({ theme }: MountainProps) {
   ]
 
   const splinePath = methods.spline(vertices, 1, true)
-  const triangleCount = methods.random(2, 3)
+  const triangleCount = methods.random(1, 2)
   for (let i = 0; i < triangleCount; i++) {
-    treeGroup
+    mountainGroup
       .path(splinePath)
-      .fill(theme.palette.tree)
+      .fill(theme.palette.mountain)
       .stroke(theme.image.stroke)
-      .dy(-i * size * 0.7)
+      .scale(i * 0.8)
   }
 
-  return treeGroup
+  return mountainGroup
 }
