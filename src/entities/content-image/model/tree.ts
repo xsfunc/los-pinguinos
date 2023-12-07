@@ -69,10 +69,11 @@ function triangleTree({ theme }: TreeProps) {
     [size, 0],
   ]
 
+  const splinePath = methods.spline(vertices, 1, true)
   const triangleCount = methods.random(2, 3)
   for (let i = 0; i < triangleCount; i++) {
     treeGroup
-      .polygon(vertices)
+      .path(splinePath)
       .fill(theme.palette.tree)
       .stroke(theme.image.stroke)
       .dy(-i * size * 0.7)
