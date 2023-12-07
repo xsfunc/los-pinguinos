@@ -4,7 +4,7 @@ import type { elements } from '.'
 import type { Theme } from '@/shared/theme'
 import { methods } from '@/shared'
 
-type TreeVariant = typeof elements.tree[number]
+export type TreeVariant = typeof elements.tree[number]
 interface TreeProps {
   theme: Theme
   options: {

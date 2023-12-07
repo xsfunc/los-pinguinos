@@ -15,3 +15,7 @@ export const elementsFactory = {
   sun,
   tree,
 }
+
+export type { SunVariant } from './sun'
+export type { TreeVariant } from './tree'
+export type { MountainVariant } from './mountain'

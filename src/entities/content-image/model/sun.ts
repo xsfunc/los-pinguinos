@@ -3,7 +3,7 @@ import type { elements } from '.'
 import { methods } from '@/shared'
 import type { Theme } from '@/shared/theme'
 
-type SunVariant = typeof elements.sun[number]
+export type SunVariant = typeof elements.sun[number]
 interface SunProps {
   theme: Theme
   options: {
