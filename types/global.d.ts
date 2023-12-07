@@ -1,5 +1,4 @@
 declare global {
-
   const $fx: {
     /**
      * A random 64-character hexadecimal string will be used for this particular variable.

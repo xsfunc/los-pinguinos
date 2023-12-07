@@ -11,8 +11,9 @@ body {
   background: hsl(0, 0%, 96%);
 }
 
-.canvas {
+#canvas {
   width: 100vmin;
-  height: 100vmin;
+  height: 99vmin;
   background: hsl(0, 0%, 100%);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }

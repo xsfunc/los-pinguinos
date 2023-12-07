@@ -11,6 +11,9 @@ dependencies:
   '@svgdotjs/svg.js':
     specifier: ^3.2.0
     version: 3.2.0
+  '@svgdotjs/svg.panzoom.js':
+    specifier: ^2.1.2
+    version: 2.1.2
   vite-plugin-zip-pack:
     specifier: ^1.0.6
     version: 1.0.6(vite@5.0.5)
@@ -574,6 +577,12 @@ packages:
 
   /@svgdotjs/svg.js@3.2.0:
     resolution: {integrity: sha512-Tr8p+QVP7y+QT1GBlq1Tt57IvedVH8zCPoYxdHLX0Oof3a/PqnC/tXAkVufv1JQJfsDHlH/UrjcDfgxSofqSNA==}
+    dev: false
+
+  /@svgdotjs/svg.panzoom.js@2.1.2:
+    resolution: {integrity: sha512-0Nzo2TRlTebW3pzfAPtHx8Ye7Y3kuMEkK7hwVJi0SgQUB/vstjg7fvCJxB++EqsuDEetP0/SC+4CpLMVm6Lh2g==}
+    dependencies:
+      '@svgdotjs/svg.js': 3.2.0
     dev: false
 
   /@types/json-schema@7.0.15:
