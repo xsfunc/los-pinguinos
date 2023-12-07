@@ -23,7 +23,7 @@ export function tree(props: TreeProps) {
 }
 
 function circleTree({ theme }: TreeProps) {
-  const size = methods.getRandom(100, 200)
+  const size = methods.random(100, 200)
   const treeGroup = SVG().group()
   const leaves = treeGroup
     .circle(size)
@@ -41,8 +41,8 @@ function circleTree({ theme }: TreeProps) {
 }
 
 function squareTree({ theme }: TreeProps) {
-  const width = methods.getRandom(100, 200)
-  const height = methods.getRandom(100, 200)
+  const width = methods.random(100, 200)
+  const height = methods.random(100, 200)
   const treeGroup = SVG().group()
   const leaves = treeGroup
     .rect(width, height)
@@ -61,7 +61,7 @@ function squareTree({ theme }: TreeProps) {
 }
 
 function triangleTree({ theme }: TreeProps) {
-  const size = methods.getRandom(50, 80)
+  const size = methods.random(50, 80)
   const treeGroup = SVG().group()
   const vertices: ArrayXY[] = [
     [0, 0],
@@ -69,7 +69,7 @@ function triangleTree({ theme }: TreeProps) {
     [size, 0],
   ]
 
-  const triangleCount = methods.getRandom(2, 3)
+  const triangleCount = methods.random(2, 3)
   for (let i = 0; i < triangleCount; i++) {
     treeGroup
       .polygon(vertices)

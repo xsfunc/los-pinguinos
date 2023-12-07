@@ -1,4 +1,4 @@
-export function getRandom(min: number, max: number): number {
+export function random(min: number, max: number): number {
   return Math.floor($fx.rand() * (max - min + 1)) + min
 }
 

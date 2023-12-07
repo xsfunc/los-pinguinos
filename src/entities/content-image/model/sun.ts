@@ -13,7 +13,7 @@ interface SunProps {
 
 export function sun({ theme, options }: SunProps) {
   const minMax = getSunMinMaxSize(options.variant)
-  const size = methods.getRandom(...minMax)
+  const size = methods.random(...minMax)
   const sunGroup = SVG().group()
 
   const sun = sunGroup

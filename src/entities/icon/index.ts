@@ -35,6 +35,6 @@ export function createIcon({ theme, iconOptions }: IconProps) {
     .text(iconOptions.iconText)
 
   return group
-    .dx(methods.getRandom(20, 800))
-    .dy(methods.getRandom(20, 800))
+    .dx(methods.random(20, 800))
+    .dy(methods.random(20, 800))
 }

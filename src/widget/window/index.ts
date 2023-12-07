@@ -11,8 +11,8 @@ interface WindowProps {
 }
 
 export function createWindow({ theme, options }: WindowProps) {
-  const width = methods.getRandom(500, 900)
-  const height = methods.getRandom(300, Math.min(width, 600))
+  const width = methods.random(500, 900)
+  const height = methods.random(300, Math.min(width, 600))
   const group = SVG()
     .group()
     .draggable()
