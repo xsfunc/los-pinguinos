@@ -31,11 +31,12 @@ function squareHouse({ theme }: HouseProps) {
     .fill(theme.palette.house.main)
     .stroke(theme.image.stroke)
 
-  houseGroup
+  houseGroup // window
     .rect(width / 4, width / 4)
-    .fill(theme.palette.house.main)
+    .fill(theme.palette.house.window)
     .stroke(theme.image.stroke)
-    .y(height / 5)
+    .radius(4)
+    .y(height / 2)
     .cx(main.cx())
 
   return houseGroup
@@ -55,11 +56,12 @@ function triangleHouse({ theme }: HouseProps) {
     .fill(theme.palette.house.main)
     .stroke(theme.image.stroke)
 
-  houseGroup
+  houseGroup // window
     .rect(size / 4, size / 4)
-    .fill(theme.palette.house.main)
+    .fill(theme.palette.house.window)
     .stroke(theme.image.stroke)
-    .y(size / 5)
+    .radius(size / 8)
+    .y(-size / 5)
     .cx(main.cx())
 
   return houseGroup
