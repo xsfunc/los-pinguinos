@@ -16,6 +16,11 @@ function createPalette() {
     stroke: 'black',
     sun: 'orange',
     tree: 'green',
+    mountain: 'tomato',
+    house: {
+      main: 'red',
+      window: 'blue',
+    },
   }
 }
 
