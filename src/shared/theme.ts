@@ -4,9 +4,25 @@ export type Theme = ReturnType<typeof createTheme>
 
 export function createTheme() {
   return {
+    palette: createPalette(),
+    image: createImageOptions(),
     icon: createIconOptions(),
     window: createWindowOptions(),
   } as const
+}
+
+function createPalette() {
+  return {
+    stroke: 'black',
+    sun: 'orange',
+    tree: 'green',
+  }
+}
+
+function createImageOptions() {
+  return {
+    stroke: { width: 4, color: 'black' },
+  }
 }
 
 function createIconOptions() {
