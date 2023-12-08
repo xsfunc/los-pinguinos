@@ -27,7 +27,7 @@ function createPalette() {
 
 function createImageOptions() {
   return {
-    stroke: { width: 4, color: 'black' },
+    stroke: { width: 4, color: 'black', linecap: 'round' },
   }
 }
 

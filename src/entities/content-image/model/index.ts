@@ -3,6 +3,7 @@ import { tree } from './tree'
 import { house } from './house'
 import { mountain } from './mountain'
 import { cloud } from './cloud'
+import { rain } from './rain'
 
 export const elements = {
   sun: ['base', 'with-lines', 'with-dots', 'sunset'],
@@ -22,6 +23,7 @@ export const elementsFactory = {
   mountain,
   house,
   cloud,
+  rain,
 }
 
 export type { SunVariant } from './sun'
