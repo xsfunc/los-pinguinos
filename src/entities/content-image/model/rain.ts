@@ -1,20 +1,18 @@
 import { SVG } from '@svgdotjs/svg.js'
 import type { Theme } from '@/shared/theme'
-import { methods } from '@/shared'
 
 interface RainProps {
   theme: Theme
   options: {
     size: number
     gap?: number
-    angle?: number
     count?: number
   }
 }
 
 export function rain({ theme, options }: RainProps) {
   const group = SVG().group()
-  const angle = options.angle || methods.sample([45, -45, 60, -60])
+  const angle = 60
   const gap = options.gap || options.size / 3
   const count = options.count || 10
   const element = group

@@ -7,7 +7,8 @@ export type CloudVariant = typeof elements.cloud[number]
 interface MountainProps {
   theme: Theme
   options: {
-    variant: CloudVariant
+    size: number
+    variant?: CloudVariant
   }
 }
 
@@ -15,12 +16,12 @@ export function cloud(props: MountainProps) {
   const cloud = {
     base: baseCloud,
   } as const
-  const func = cloud[props.options.variant]
+  const func = cloud[props.options.variant || 'base']
   return func(props)
 }
 
-function baseCloud({ theme }: MountainProps) {
-  const width = methods.random(80, 120)
+function baseCloud({ theme, options }: MountainProps) {
+  const width = options.size
   const height = width / 2
   const inaccuracy = height / 10
   const cloudGroup = SVG().group()
