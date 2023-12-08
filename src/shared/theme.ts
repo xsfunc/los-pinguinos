@@ -19,6 +19,13 @@ function createPalette() {
     mountain: '#899D78',
     cloud: '#EDE6F2',
     sky: '#8ACDEA',
+    hill: [
+      '#1B1B3A',
+      '#693668',
+      '#A74482',
+      '#F84AA7',
+      '#FF3562',
+    ],
     house: {
       main: '#DA4167',
       window: '#F0BCD4',
