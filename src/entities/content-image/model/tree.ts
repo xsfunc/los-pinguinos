@@ -19,7 +19,7 @@ export function tree(props: TreeProps) {
     triangle: triangleTree,
   } as const
   const treeFunction = treeMap[props.options.variant]
-  return treeFunction(props)
+  return treeFunction(props).draggable()
 }
 
 function circleTree({ theme }: TreeProps) {

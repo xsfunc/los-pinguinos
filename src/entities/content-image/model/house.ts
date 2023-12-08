@@ -18,7 +18,7 @@ export function house(props: HouseProps) {
     triangle: triangleHouse,
   } as const
   const func = houseMap[props.options.variant]
-  return func(props)
+  return func(props).draggable()
 }
 
 function squareHouse({ theme }: HouseProps) {

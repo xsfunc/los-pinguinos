@@ -17,7 +17,7 @@ export function mountain(props: MountainProps) {
     base: baseMountain,
   } as const
   const func = mountainMap[props.options.variant]
-  return func(props)
+  return func(props).draggable()
 }
 
 function baseMountain({ theme }: MountainProps) {

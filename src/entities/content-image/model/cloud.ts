@@ -44,5 +44,5 @@ function baseCloud({ theme }: MountainProps) {
     main.dx(moveX)
   }
 
-  return cloudGroup
+  return cloudGroup.draggable()
 }

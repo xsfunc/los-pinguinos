@@ -52,7 +52,7 @@ export function sun({ theme, options }: SunProps) {
     }
   }
 
-  return sunGroup
+  return sunGroup.draggable()
 }
 
 function getSunMinMaxSize(variant: SunVariant): [number, number] {

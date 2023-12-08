@@ -25,5 +25,5 @@ export function rainbow({ theme, options }: RainbowProps) {
     .stroke(theme.image.stroke)
     .center(0, 0)
 
-  return group
+  return group.draggable()
 }

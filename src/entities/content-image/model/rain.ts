@@ -30,5 +30,5 @@ export function rain({ theme, options }: RainProps) {
       clone.dx(options.size + gap)
   }
 
-  return group
+  return group.draggable()
 }
