@@ -17,6 +17,7 @@ function createPalette() {
     sun: 'orange',
     tree: 'green',
     mountain: 'tomato',
+    cloud: 'white',
     house: {
       main: 'red',
       window: 'blue',
