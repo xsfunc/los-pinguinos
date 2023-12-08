@@ -14,14 +14,18 @@ export function createTheme() {
 function createPalette() {
   return {
     stroke: 'black',
-    sun: 'orange',
-    tree: 'green',
-    mountain: 'tomato',
+    sun: '#FB4D3D',
+    tree: '#305252',
+    mountain: '#899D78',
     cloud: '#EDE6F2',
     sky: '#8ACDEA',
     house: {
-      main: 'red',
-      window: 'blue',
+      main: '#DA4167',
+      window: '#F0BCD4',
+    },
+    river: {
+      water: '#42BFDD',
+      wave: '#084B83',
     },
     rainbow: [
       '#FF69EB',
@@ -35,7 +39,7 @@ function createPalette() {
 
 function createImageOptions() {
   return {
-    stroke: { width: 4, color: 'black', linecap: 'round' },
+    stroke: { width: 4, color: '#16262E', linecap: 'round' },
   }
 }
 

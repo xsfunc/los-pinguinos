@@ -5,6 +5,7 @@ import { mountain } from './mountain'
 import { cloud } from './cloud'
 import { rain } from './rain'
 import { rainbow } from './rainbow'
+import { river } from './river'
 
 export const elements = {
   sun: ['base', 'with-lines', 'with-dots', 'sunset'],
@@ -26,6 +27,7 @@ export const elementsFactory = {
   cloud,
   rain,
   rainbow,
+  river,
 }
 
 export type { SunVariant } from './sun'
