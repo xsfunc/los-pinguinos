@@ -6,6 +6,7 @@ import { cloud } from './cloud'
 import { rain } from './rain'
 import { rainbow } from './rainbow'
 import { river } from './river'
+import { hill } from './hill'
 
 export const elements = {
   sun: ['base', 'with-lines', 'with-dots', 'sunset'],
@@ -15,7 +16,7 @@ export const elements = {
   cloud: ['base'],
   rain: ['base'],
   rainbow: ['base'],
-  hill: ['base'],
+  hill: ['base', 'round'],
   river: ['base'],
 } as const
 
@@ -28,8 +29,10 @@ export const elementsFactory = {
   rain,
   rainbow,
   river,
+  hill,
 }
 
+export type { HillVariant } from './hill'
 export type { SunVariant } from './sun'
 export type { TreeVariant } from './tree'
 export type { MountainVariant } from './mountain'
