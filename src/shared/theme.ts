@@ -17,11 +17,19 @@ function createPalette() {
     sun: 'orange',
     tree: 'green',
     mountain: 'tomato',
-    cloud: 'white',
+    cloud: '#EDE6F2',
+    sky: '#8ACDEA',
     house: {
       main: 'red',
       window: 'blue',
     },
+    rainbow: [
+      '#FF69EB',
+      '#FF86C8',
+      '#FFA3A5',
+      '#FFBF81',
+      '#FFDC5E',
+    ],
   }
 }
 
