@@ -19,7 +19,7 @@ export function sun({ theme, options }: SunProps) {
   const sun = sunGroup
     .circle(size)
     .fill(theme.palette.sun)
-    .stroke(theme.palette.stroke)
+    .stroke(theme.image.stroke)
 
   if (options.variant === 'with-dots') {
     const dotsCount = 12
@@ -31,7 +31,7 @@ export function sun({ theme, options }: SunProps) {
       sunGroup
         .circle(10)
         .fill(theme.palette.sun)
-        .stroke(theme.palette.stroke)
+        .stroke(theme.image.stroke)
         .center(x, y)
     }
   }
@@ -48,7 +48,7 @@ export function sun({ theme, options }: SunProps) {
       sunGroup
         .line(x1, y1, x2, y2)
         .fill(theme.palette.sun)
-        .stroke(theme.palette.stroke)
+        .stroke(theme.image.stroke)
     }
   }
 
