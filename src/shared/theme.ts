@@ -16,15 +16,15 @@ function createPalette() {
     stroke: 'black',
     sun: '#FB4D3D',
     tree: '#305252',
-    mountain: '#899D78',
+    mountain: '#1b4332',
     cloud: '#EDE6F2',
     sky: '#8ACDEA',
     hill: [
-      '#1B1B3A',
-      '#693668',
-      '#A74482',
-      '#F84AA7',
-      '#FF3562',
+      '#a3b18a',
+      '#588157',
+      '#3a5a40',
+      '#344e41',
+      '#606c38',
     ],
     house: {
       main: '#DA4167',
@@ -46,7 +46,11 @@ function createPalette() {
 
 function createImageOptions() {
   return {
-    stroke: { width: 4, color: '#16262E', linecap: 'round' },
+    stroke: {
+      width: methods.random(5, 10),
+      color: '#283618',
+      linecap: 'round',
+    },
   }
 }
 
