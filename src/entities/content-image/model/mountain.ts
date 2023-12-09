@@ -9,6 +9,7 @@ interface MountainProps {
   theme: Theme
   options: {
     variant: MountainVariant
+    size: number
   }
 }
 
@@ -20,9 +21,8 @@ export function mountain(props: MountainProps) {
   return func(props).draggable()
 }
 
-function baseMountain({ theme }: MountainProps) {
-  const size = methods.random(50, 80)
-  const mountainGroup = SVG().group()
+function baseMountain({ theme, options }: MountainProps) {
+  const { size } = options
   const vertices: ArrayXY[] = [
     [0, 0],
     [size / 2, -size],
@@ -30,14 +30,9 @@ function baseMountain({ theme }: MountainProps) {
   ]
 
   const splinePath = methods.spline(vertices, 1, true)
-  const triangleCount = methods.random(1, 2)
-  for (let i = 0; i < triangleCount; i++) {
-    mountainGroup
-      .path(splinePath)
-      .fill(theme.palette.mountain)
-      .stroke(theme.image.stroke)
-      .scale(i * 0.8)
-  }
-
-  return mountainGroup
+  return SVG()
+    .path(splinePath)
+    .fill(theme.palette.mountain)
+    .stroke(theme.image.stroke)
+    .draggable()
 }
