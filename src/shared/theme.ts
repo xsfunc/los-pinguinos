@@ -2,6 +2,99 @@ import { methods } from '.'
 
 export type Theme = ReturnType<typeof createTheme>
 
+const palettes = [
+  {
+    stroke: '#001219',
+    sun: '#ee9b00',
+    tree: '#386641',
+    mountain: '#bc4749',
+    cloud: '#f2e8cf',
+    sky: '#94d2bd',
+    river: '#0a9396',
+    hill: [
+      '#6a994e',
+      '#a7c957',
+      '#588157',
+    ],
+    house: {
+      main: '#9b2226',
+      window: '#0a9396',
+    },
+  },
+  {
+    stroke: '#03045e',
+    sun: '#023e8a',
+    tree: '#0077b6',
+    mountain: '#90e0ef',
+    cloud: '#caf0f8',
+    sky: '#ade8f4',
+    river: '#48cae4',
+    hill: [
+      '#00b4d8',
+      '#00b4d8',
+      '#0096c7',
+    ],
+    house: {
+      main: '#caf0f8',
+      window: '#023e8a',
+    },
+  },
+  {
+    stroke: '#590d22',
+    sun: '#c9184a',
+    tree: '#c9184a',
+    mountain: '#800f2f',
+    cloud: '#fff0f3',
+    sky: '#ffccd5',
+    river: '#ff758f',
+    hill: [
+      '#ff758f',
+      '#ff4d6d',
+      '#c9184a',
+    ],
+    house: {
+      main: '#800f2f',
+      window: '#ffb3c1',
+    },
+  },
+  {
+    stroke: '#343a40',
+    sun: '#fbf8cc',
+    tree: '#98f5e1',
+    mountain: '#a3c4f3',
+    cloud: '#fde4cf',
+    sky: '#8eecf5',
+    river: '#a3c4f3',
+    hill: [
+      '#b9fbc0',
+      '#98f5e1',
+    ],
+    house: {
+      main: '#cfbaf0',
+      window: '#a3c4f3',
+    },
+  },
+  {
+    stroke: '#0b2545',
+    sun: '#f7b801',
+    tree: '#134074',
+    mountain: '#3d348b',
+    cloud: '#f7ede2',
+    sky: '#8da9c4',
+    river: '#7678ed',
+    hill: [
+      '#13315c',
+      '#8da9c4',
+    ],
+    house: {
+      main: '#f18701',
+      window: '#f35b04',
+    },
+  },
+]
+
+const palette = methods.sample(palettes)
+
 export function createTheme() {
   return {
     palette: createPalette(),
@@ -13,33 +106,13 @@ export function createTheme() {
 
 function createPalette() {
   return {
-    stroke: 'black',
-    sun: '#FB4D3D',
-    tree: '#305252',
-    mountain: '#1b4332',
-    cloud: '#EDE6F2',
-    sky: '#8ACDEA',
-    hill: [
-      '#a3b18a',
-      '#588157',
-      '#3a5a40',
-      '#344e41',
-      '#606c38',
-    ],
-    house: {
-      main: '#DA4167',
-      window: '#F0BCD4',
-    },
-    river: {
-      water: '#42BFDD',
-      wave: '#084B83',
-    },
+    ...palette,
     rainbow: [
-      '#FF69EB',
-      '#FF86C8',
-      '#FFA3A5',
-      '#FFBF81',
-      '#FFDC5E',
+      '#ee9b00',
+      '#ca6702',
+      '#bb3e03',
+      '#ae2012',
+      '#9b2226',
     ],
   }
 }
@@ -48,7 +121,7 @@ function createImageOptions() {
   return {
     stroke: {
       width: methods.random(5, 10),
-      color: '#283618',
+      color: palette.stroke,
       linecap: 'round',
     },
   }

@@ -14,7 +14,7 @@ export function river({ theme, options }: RiverProps) {
 
   group
     .rect(constants.canvas.width, options.width)
-    .fill(theme.palette.river.water)
+    .fill(theme.palette.river)
     .stroke(theme.image.stroke)
 
   const waveSize = constants.canvas.width / 10
