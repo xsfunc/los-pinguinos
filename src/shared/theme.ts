@@ -143,7 +143,7 @@ function createWindowOptions() {
   const titleHeight = controlSize + controlGap * 2
   const radius = methods.random(0, titleHeight / 2)
   const strokeOptions = {
-    width: methods.random(0, 4),
+    width: methods.random(5, 10),
     color: 'black',
   }
 
