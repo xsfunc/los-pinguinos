@@ -1,4 +1,5 @@
 import { SVG } from '@svgdotjs/svg.js'
+import '@svgdotjs/svg.draggable.js'
 import type { elements } from '.'
 import type { Theme } from '@/shared/theme'
 

@@ -23,7 +23,8 @@ export function hill(props: HillProps) {
 export function baseHill({ theme, options }: HillProps) {
   const color = methods.sample(theme.palette.hill)
   return SVG()
-    .rect(constants.canvas.width, options.height)
+    .rect(constants.canvas.width + 20, options.height)
+    .dx(-10)
     .fill(color)
     .stroke(theme.image.stroke)
     .draggable()

@@ -13,7 +13,8 @@ export function river({ theme, options }: RiverProps) {
   const group = SVG().group()
 
   group
-    .rect(constants.canvas.width, options.width)
+    .rect(constants.canvas.width + 20, options.width)
+    .dx(-10) // hide stroke out of image
     .fill(theme.palette.river)
     .stroke(theme.image.stroke)
 
