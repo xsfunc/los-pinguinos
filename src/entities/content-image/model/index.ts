@@ -36,12 +36,17 @@ export const elementsFactory = {
   hill,
 }
 
+const { width, height } = constants.canvas
 const layerCount = 5
-const layerHeight = constants.canvas.height / layerCount
-const layerWidth = constants.canvas.width
+const layerHeight = height / layerCount
+const layerWidth = width
 
 export function createImage(theme: Theme) {
   const composition = SVG().group()
+
+  composition // sky
+    .rect(width, height)
+    .fill(theme.palette.sky)
 
   // sun
   const sunSize = methods.random(50, layerHeight * 2)
