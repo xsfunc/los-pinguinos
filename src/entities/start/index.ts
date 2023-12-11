@@ -19,6 +19,7 @@ export function createStart({ theme, options }: StartProps) {
     .rect(constants.canvas.width, height)
     .radius(theme.window.radius)
     .fill(theme.palette.sky)
+    .stroke(theme.window.strokeOptions)
   const buttonFrame = group
     .rect(buttonWidth, height)
     .radius(theme.window.radius)
@@ -27,6 +28,7 @@ export function createStart({ theme, options }: StartProps) {
 
   group
     .text(options.title)
+    .fill(theme.window.strokeOptions.color)
     .font({
       anchor: 'start',
       family: 'monospace',
@@ -38,6 +40,7 @@ export function createStart({ theme, options }: StartProps) {
 
   const time = group
     .text(getTimeText())
+    .fill(theme.window.strokeOptions.color)
     .font({
       anchor: 'start',
       family: 'monospace',
