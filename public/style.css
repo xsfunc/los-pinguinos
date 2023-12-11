@@ -8,12 +8,11 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  background: hsl(0, 0%, 96%);
+  background: hsl(0, 0%, 5%);
 }
 
-#canvas {
+.canvas {
   width: 100vmin;
-  height: 99vmin;
-  background: hsl(0, 0%, 100%);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  height: 100vmin;
+  background: hsl(0, 0%, 0%);
 }
