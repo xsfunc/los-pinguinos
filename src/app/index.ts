@@ -1,18 +1,35 @@
 import { SVG } from '@svgdotjs/svg.js'
 import { createTheme } from '@/shared/theme'
 import { createImage } from '@/entities/content-image'
-import { constants } from '@/shared'
+import { constants, methods } from '@/shared'
 import { createWindow } from '@/widget/window'
+import { createStart } from '@/entities/start'
 
 const { height, width } = constants.canvas
-const canvas = SVG()
-  .addTo('#canvas')
-  .size('100%', '100%')
-  .viewbox(0, 0, width, height)
+const canvas = SVG('#canvas').root()
+// .addTo('#canvas')
+// .size('100%', '100%')
+// .viewbox(0, 0, width, height)
 
 const theme = createTheme()
 // const image = createImage(theme)
 // image.addTo(canvas)
+
+const titles = [
+  'Kawazaki',
+  'Cago',
+  'Krico',
+  'Estriper',
+]
+const title = methods.sample(titles)
+const start = createStart({
+  options: { title },
+  theme,
+})
+
+start
+  .dy(height - Number(start.height()))
+  .addTo(canvas)
 
 const iconsList = [
   {
