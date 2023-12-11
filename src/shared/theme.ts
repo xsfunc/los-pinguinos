@@ -144,7 +144,8 @@ function createWindowOptions() {
   const radius = methods.random(0, titleHeight / 2)
   const strokeOptions = {
     width: methods.random(5, 10),
-    color: 'black',
+    color: palette.stroke,
+    linecap: 'round',
   }
 
   return {
@@ -153,5 +154,8 @@ function createWindowOptions() {
     controlSize,
     controlGap,
     radius,
+    backColor: palette.river,
+    mainColor: palette.sun,
+    secondaryColor: palette.mountain,
   } as const
 }

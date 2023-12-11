@@ -4,16 +4,17 @@ import { createImage } from '@/entities/content-image'
 import { constants, methods } from '@/shared'
 import { createWindow } from '@/widget/window'
 import { createStart } from '@/entities/start'
+import { randomPattern } from '@/entities/pattern'
 
 const { height, width } = constants.canvas
 const canvas = SVG('#canvas').root()
-// .addTo('#canvas')
-// .size('100%', '100%')
-// .viewbox(0, 0, width, height)
 
 const theme = createTheme()
-// const image = createImage(theme)
-// image.addTo(canvas)
+
+const pattern = randomPattern(theme).addTo(canvas)
+const back = canvas
+  .rect(width, height)
+  .fill(pattern)
 
 const titles = [
   'Kawazaki',
@@ -21,6 +22,7 @@ const titles = [
   'Krico',
   'Estriper',
 ]
+
 const title = methods.sample(titles)
 const start = createStart({
   options: { title },
