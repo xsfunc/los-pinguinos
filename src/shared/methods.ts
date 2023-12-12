@@ -6,7 +6,7 @@ export function randomBoolean(): boolean {
 }
 
 export function sample<T>(array: ReadonlyArray<T>): T {
-  const randomIndex = Math.floor(Math.random() * array.length)
+  const randomIndex = Math.floor($fx.rand() * array.length)
   return array[randomIndex]
 }
 
