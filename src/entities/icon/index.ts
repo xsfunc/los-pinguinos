@@ -21,7 +21,7 @@ export function createIcon({ theme, iconOptions }: IconProps) {
     .radius(theme.icon.radius)
     .fill('#ccc')
 
-  const title = group
+  group // title
     .text(iconOptions.title)
     .amove(back.cx(), 0) // move text anchor to icon center
     .font({
@@ -31,7 +31,7 @@ export function createIcon({ theme, iconOptions }: IconProps) {
     })
     .dy(theme.icon.size + theme.icon.fontSize)
 
-  const icon = group
+  group
     .text(iconOptions.iconText)
 
   return group
