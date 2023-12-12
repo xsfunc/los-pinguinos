@@ -6,6 +6,7 @@ import { createWindow } from '@/widget/window'
 import { createStart } from '@/entities/start'
 import { randomPattern } from '@/entities/pattern'
 import { penguin } from '@/entities/penguin'
+import { createToast } from '@/entities/toast'
 
 const titles = [
   'Kawazaki',
@@ -59,3 +60,11 @@ start
   .addTo(canvas)
 pingo
   .move(10, height - Number(start.height()) - 102)
+
+if (methods.random(0, 10) < 3) {
+  const toast = createToast({ theme })
+  setTimeout(() => toast.hide(), 30000)
+  toast
+    .move(width - Number(toast.width()) - 10, height - Number(toast.height()) - Number(start.height()) - 10)
+    .addTo(canvas)
+}
