@@ -51,7 +51,7 @@ export function createWindow({ theme, options }: WindowProps) {
 
   const closeControl = group
     .circle(theme.window.controlSize)
-    .fill('red')
+    .fill(theme.window.mainColor)
     .css('cursor', 'pointer')
     .dy(theme.window.controlGap)
     .dy(-theme.window.titleSize)
@@ -59,14 +59,16 @@ export function createWindow({ theme, options }: WindowProps) {
   const minControl = closeControl
     .clone()
     .addTo(group)
-    .fill('yellow')
+    .fill(theme.window.backColor)
     .dx(theme.window.controlSize + theme.window.controlGap)
   // max control
   minControl
     .clone()
     .addTo(group)
-    .fill('green')
+    .fill(theme.window.secondaryColor)
     .dx(theme.window.controlSize + theme.window.controlGap)
+
+  closeControl.on('click', () => group.hide())
 
   return group
 }
