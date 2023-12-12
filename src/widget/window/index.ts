@@ -1,21 +1,21 @@
 import { SVG } from '@svgdotjs/svg.js'
 import '@svgdotjs/svg.draggable.js'
 import type { Container, Element } from '@svgdotjs/svg.js'
-import { constants } from '@/shared'
 import type { Theme } from '@/shared/theme'
 
 interface WindowProps {
   theme: Theme
   options: {
-    title: string
+    title?: string
     content: Element
     canvas: Container
+    width: number
+    height: number
   }
 }
 
 export function createWindow({ theme, options }: WindowProps) {
-  const width = constants.canvas.height
-  const height = constants.canvas.width
+  const { height, width } = options
   const group = SVG().group().draggable()
   const mask = options.canvas.mask()
 
@@ -45,7 +45,6 @@ export function createWindow({ theme, options }: WindowProps) {
     .addTo(group)
 
   group
-    .scale(0.8)
     .on('dragmove', () => {
       frameMask.move(title.x(), Number(title.y()) + theme.window.titleSize)
     })

@@ -5,16 +5,7 @@ import { constants, methods } from '@/shared'
 import { createWindow } from '@/widget/window'
 import { createStart } from '@/entities/start'
 import { randomPattern } from '@/entities/pattern'
-
-const { height, width } = constants.canvas
-const canvas = SVG('#canvas').root()
-
-const theme = createTheme()
-
-const pattern = randomPattern(theme).addTo(canvas)
-const back = canvas
-  .rect(width, height)
-  .fill(pattern)
+import { penguin } from '@/entities/penguin'
 
 const titles = [
   'Kawazaki',
@@ -22,32 +13,14 @@ const titles = [
   'Krico',
   'Estriper',
 ]
+const { height, width } = constants.canvas
+const canvas = SVG('#canvas').root()
+const theme = createTheme()
+const pattern = randomPattern(theme).addTo(canvas)
 
-const title = methods.sample(titles)
-const start = createStart({
-  options: { title },
-  theme,
-})
-
-start
-  .dy(height - Number(start.height()))
-  .addTo(canvas)
-
-const iconsList = [
-  {
-    title: 'fxhash.xyz',
-    iconText: 'fx',
-  },
-  {
-    title: 'xshash.xyz',
-    iconText: 'xs',
-  },
-]
-
-// for (const iconOptions of iconsList) {
-//   createIcon({ theme, iconOptions })
-//     .addTo(canvas)
-// }
+canvas // background
+  .rect(width, height)
+  .fill(pattern)
 
 const windowCount = 1
 for (let i = 0; i < windowCount; i++) {
@@ -64,57 +37,25 @@ for (let i = 0; i < windowCount; i++) {
   //     maskRect.move(rect.x(), rect.y())
   //   })
   const windowSvg = createWindow({
-    options: { title: 'fx', content: image, canvas },
     theme,
+    options: {
+      width,
+      height,
+      content: image,
+      canvas,
+    },
   })
-  windowSvg.addTo(canvas)
+  windowSvg
+    .scale(0.9)
+    .addTo(canvas)
 }
 
-// elementsFactory.sun({ theme, options: { variant: 'with-dots' } })
-//   .cx(500)
-//   .cy(500)
-//   .addTo(canvas)
+const title = methods.sample(titles)
+const start = createStart({ options: { title }, theme })
+const pingo = penguin({ theme, options: { canvas } })
 
-// elementsFactory.sun({ theme, options: { variant: 'with-lines' } })
-//   .cx(100)
-//   .cy(100)
-//   .addTo(canvas)
-
-// elementsFactory.tree({ theme, options: { variant: 'square' } })
-//   .cx(200)
-//   .cy(200)
-//   .addTo(canvas)
-// elementsFactory.tree({ theme, options: { variant: 'circle' } })
-//   .cx(300)
-//   .cy(200)
-//   .addTo(canvas)
-// elementsFactory.house({ theme, options: { variant: 'square' } })
-//   .cx(400)
-//   .cy(200)
-//   .addTo(canvas)
-// elementsFactory.cloud({ theme, options: { variant: 'base' } })
-//   .cx(500)
-//   .cy(500)
-//   .addTo(canvas)
-
-// elementsFactory.rain({ theme, options: { size: 40 } })
-//   .move(100, 0)
-//   .addTo(canvas)
-
-// elementsFactory.rainbow({ theme, options: { size: 80, width: 20 } })
-//   .move(200, 300)
-//   .addTo(canvas)
-
-// elementsFactory.river({ theme, options: { width: 100 } })
-//   .move(0, 300)
-//   .addTo(canvas)
-
-// elementsFactory.hill({ theme, options: { variant: 'round', height: 300 } })
-//   .move(0, 300)
-//   .addTo(canvas)
-// elementsFactory.hill({ theme, options: { variant: 'base', height: 100 } })
-//   .move(0, 300)
-//   .addTo(canvas)
-// elementsFactory.hill({ theme, options: { variant: 'round', height: 400 } })
-//   .move(0, 300)
-//   .addTo(canvas)
+start
+  .dy(height - Number(start.height()))
+  .addTo(canvas)
+pingo
+  .move(10, height - Number(start.height()) - 102)
