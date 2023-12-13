@@ -25,19 +25,8 @@ canvas // background
 
 const windowCount = 1
 for (let i = 0; i < windowCount; i++) {
-  // const group = canvas.group().draggable()
-  // const rect = group.rect(10, 10).fill('red')
   const image = createImage(theme)
-  // .addTo(group)
-  // const mask = canvas.mask()
-  // const maskRect = group.rect(1000, 1000).fill('white').addTo(mask)
-  // image.maskWith(mask)
-  // group
-  //   .scale(0.8)
-  //   .on('dragmove', (e) => {
-  //     maskRect.move(rect.x(), rect.y())
-  //   })
-  const windowSvg = createWindow({
+  createWindow({
     theme,
     options: {
       width,
@@ -46,7 +35,6 @@ for (let i = 0; i < windowCount; i++) {
       canvas,
     },
   })
-  windowSvg
     .scale(0.9)
     .addTo(canvas)
 }
