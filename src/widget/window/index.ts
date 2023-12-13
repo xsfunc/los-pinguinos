@@ -1,6 +1,6 @@
 import { SVG } from '@svgdotjs/svg.js'
 import '@svgdotjs/svg.draggable.js'
-import type { Container, Element } from '@svgdotjs/svg.js'
+import type { Element, Mask } from '@svgdotjs/svg.js'
 import type { Theme } from '@/shared/theme'
 
 interface WindowProps {
@@ -8,7 +8,7 @@ interface WindowProps {
   options: {
     title?: string
     content: Element
-    canvas: Container
+    mask: Mask
     width: number
     height: number
   }
@@ -17,7 +17,6 @@ interface WindowProps {
 export function createWindow({ theme, options }: WindowProps) {
   const { height, width } = options
   const group = SVG().group().draggable()
-  const mask = options.canvas.mask()
 
   const title = group
     .rect(width, theme.window.titleSize)
@@ -38,10 +37,10 @@ export function createWindow({ theme, options }: WindowProps) {
     .fill('white')
     .stroke({ ...theme.window.strokeOptions, color: 'black' })
     .radius(theme.window.radius)
-    .addTo(mask)
+    .addTo(options.mask)
 
   options.content
-    .maskWith(mask)
+    .maskWith(options.mask)
     .addTo(group)
 
   group

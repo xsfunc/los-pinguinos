@@ -25,14 +25,15 @@ canvas // background
 
 const windowCount = 1
 for (let i = 0; i < windowCount; i++) {
-  const image = createImage(theme)
+  const content = createImage(theme)
+  const mask = canvas.mask()
   createWindow({
     theme,
     options: {
       width,
       height,
-      content: image,
-      canvas,
+      mask,
+      content,
     },
   })
     .scale(0.9)
