@@ -6,6 +6,7 @@ interface PenguinProps {
   theme: Theme
   options: {
     canvas: Container
+    hasBra?: boolean
   }
 }
 
@@ -66,6 +67,28 @@ export function penguin({ theme, options }: PenguinProps) {
     .fill('orange')
     .cy(leftEye.cy())
     .cx(fullBody.cx())
+
+  if (options.hasBra) {
+    group
+      .rect(100, 5)
+      .fill(theme.palette.sun)
+      .move(0, 65)
+    group
+      .circle(16)
+      .move(25, 60)
+      .fill(theme.palette.sun)
+    group
+      .circle(16)
+      .move(55, 60)
+      .fill(theme.palette.sun)
+  }
+  group
+    .circle(20)
+    .move(0, 55)
+    .fill(theme.window.strokeOptions.color)
+    .clone()
+    .addTo(group)
+    .move(100 - 20, 55)
 
   fullBody.maskWith(mask)
   whiteBody.maskWith(mask)

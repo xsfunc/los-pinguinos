@@ -13,7 +13,7 @@ const titles = [
   'Cago',
   'Krico',
   'Estriper',
-]
+] as const
 const { height, width } = constants.canvas
 const canvas = SVG('#canvas').root()
 const theme = createTheme()
@@ -41,7 +41,7 @@ for (let i = 0; i < windowCount; i++) {
 
 const penguinName = methods.sample(titles)
 const start = createStart({ options: { title: penguinName }, theme })
-const pingo = penguin({ theme, options: { canvas } })
+const pingo = penguin({ theme, options: { canvas, hasBra: penguinName === 'Estriper' } })
 const hasToast = methods.random(0, 10) < 3
 
 start
