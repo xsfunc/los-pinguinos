@@ -7,6 +7,7 @@ import { createStart } from '@/entities/start'
 import { randomPattern } from '@/entities/pattern'
 import { penguin } from '@/entities/penguin'
 import { createToast } from '@/entities/toast'
+import { createError } from '@/entities/error'
 
 const titles = [
   'Kawazaki',
@@ -40,10 +41,34 @@ for (let i = 0; i < windowCount; i++) {
     .addTo(canvas)
 }
 
+const hasError = methods.randomBoolean(0.05)
+if (hasError) {
+  const errorCount = methods.random(1, 3)
+  const width = 250
+  const height = 100
+  const cx = 400
+  const cy = methods.random(500, 600)
+
+  for (let i = 0; i < errorCount; i++) {
+    const offset = 20 * i
+    const content = createError({ theme, options: { height, width } })
+    createWindow({
+      theme,
+      options: {
+        width,
+        height,
+        content,
+      },
+    })
+      .addTo(canvas)
+      .move(cx + offset, cy + offset)
+  }
+}
+
 const penguinName = methods.sample(titles)
 const start = createStart({ options: { title: penguinName }, theme })
 const pingo = penguin({ theme, options: { canvas, hasBra: penguinName === 'Estriper' } })
-const hasToast = methods.random(0, 10) < 3
+const hasToast = methods.randomBoolean(0.3)
 
 start
   .dy(height - Number(start.height()))
@@ -62,5 +87,6 @@ if (hasToast) {
 $fx.features({
   'Penguin': penguinName,
   'Has notification': hasToast,
+  'Has error': hasError,
   'Palette': theme.palette.index,
 })

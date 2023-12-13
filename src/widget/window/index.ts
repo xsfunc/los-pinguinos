@@ -7,8 +7,8 @@ interface WindowProps {
   theme: Theme
   options: {
     title?: string
+    mask?: Mask
     content: Element
-    mask: Mask
     width: number
     height: number
   }
@@ -28,25 +28,26 @@ export function createWindow({ theme, options }: WindowProps) {
 
   group // frame
     .rect(width, height)
-    .fill({ opacity: 0 })
+    .fill(theme.palette.sky)
     .stroke(theme.window.strokeOptions)
     .radius(theme.window.radius)
 
-  const frameMask = group
-    .rect(width, height)
-    .fill('white')
-    .stroke({ ...theme.window.strokeOptions, color: 'black' })
-    .radius(theme.window.radius)
-    .addTo(options.mask)
-
   options.content
-    .maskWith(options.mask)
     .addTo(group)
 
-  group
-    .on('dragmove', () => {
-      frameMask.move(title.x(), Number(title.y()) + theme.window.titleSize)
-    })
+  if (options.mask) {
+    const frameMask = group
+      .rect(width, height)
+      .fill('white')
+      .stroke({ ...theme.window.strokeOptions, color: 'black' })
+      .radius(theme.window.radius)
+      .addTo(options.mask)
+    options.content.maskWith(options.mask)
+    group
+      .on('dragmove', () => {
+        frameMask.move(title.x(), Number(title.y()) + theme.window.titleSize)
+      })
+  }
 
   const closeControl = group
     .circle(theme.window.controlSize)

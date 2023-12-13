@@ -1,8 +1,9 @@
 export function random(min: number, max: number): number {
   return Math.floor($fx.rand() * (max - min + 1)) + min
 }
-export function randomBoolean(): boolean {
-  return random(0, 1) < 0.5
+
+export function randomBoolean(percent: number = 0.5): boolean {
+  return random(0, 1) < percent
 }
 
 export function sample<T>(array: ReadonlyArray<T>): T {
