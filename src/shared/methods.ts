@@ -6,8 +6,15 @@ export function randomBoolean(): boolean {
 }
 
 export function sample<T>(array: ReadonlyArray<T>): T {
-  const randomIndex = Math.floor($fx.rand() * array.length)
-  return array[randomIndex]
+  return sampleWithIndex(array).choice
+}
+
+export function sampleWithIndex<T>(array: ReadonlyArray<T>): { choice: T, index: number } {
+  const index = Math.floor($fx.rand() * array.length)
+  return {
+    index,
+    choice: array[index],
+  }
 }
 
 function formatPoints(

@@ -88,7 +88,7 @@ export function createImage(theme: Theme) {
   for (let i = 0; i < mountainCount; i++) {
     const size = methods.random(layerHeight, layerHeight * 2)
     const dx = methods.random(0, constants.canvas.width * 0.7)
-    const dy = methods.random(layerHeight, layerHeight * 2) - size * 0.2
+    const dy = methods.random(layerHeight, layerHeight * 2)
     factory
       .mountain({ theme, options: { variant: 'base', size } })
       .addTo(composition)

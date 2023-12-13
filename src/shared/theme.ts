@@ -91,9 +91,114 @@ const palettes = [
       window: '#f35b04',
     },
   },
+  {
+    stroke: '#333d29',
+    sun: '#7f4f24',
+    tree: '#a4ac86',
+    mountain: '#936639',
+    cloud: '#a68a64',
+    sky: '#c2c5aa',
+    river: '#a4ac86',
+    hill: [
+      '#656d4a',
+      '#414833',
+    ],
+    house: {
+      main: '#f18701',
+      window: '#f35b04',
+    },
+  },
+  {
+    stroke: '#212529',
+    sun: '#6c757d',
+    tree: '#495057',
+    mountain: '#ced4da',
+    cloud: '#dee2e6',
+    sky: '#f8f9fa',
+    river: '#e9ecef',
+    hill: [
+      '#343a40',
+      '#495057',
+    ],
+    house: {
+      main: '#6c757d',
+      window: '#f35b04',
+    },
+  },
+  {
+    stroke: '#3a0ca3',
+    sun: '#f72585',
+    tree: '#b5179e',
+    mountain: '#7209b7',
+    cloud: '#4895ef',
+    sky: '#4cc9f0',
+    river: '#4361ee',
+    hill: [
+      '#7209b7',
+      '#560bad',
+    ],
+    house: {
+      main: '#b5179e',
+      window: '#f35b04',
+    },
+  },
+  {
+    stroke: '#65010c',
+    sun: '#cb1b16',
+    tree: '#ef3c2d',
+    mountain: '#f26a4f',
+    cloud: '#f29479',
+    sky: '#fedfd4',
+    river: '#9dcee2',
+    hill: [
+      '#4091c9',
+      '#1368aa',
+    ],
+    house: {
+      main: '#cb1b16',
+      window: '#9dcee2',
+    },
+  },
+  {
+    stroke: '#004b23',
+    sun: '#70e000',
+    tree: '#38b000',
+    mountain: '#008000',
+    cloud: '#9ef01a',
+    sky: '#ccff33',
+    river: '#9ef01a',
+    hill: [
+      '#007200',
+      '#006400',
+    ],
+    house: {
+      main: '#9ef01a',
+      window: '#38b000',
+    },
+  },
+  {
+    stroke: '#735d78',
+    sun: '#fad2e1',
+    tree: '#bee1e6',
+    mountain: '#fff1e6',
+    cloud: '#cddafd',
+    sky: '#f0efeb',
+    river: '#dfe7fd',
+    hill: [
+      '#fff1e6',
+      '#fde2e4',
+    ],
+    house: {
+      main: '#fad2e1',
+      window: '#dfe7fd',
+    },
+  },
 ]
 
-const palette = methods.sample(palettes)
+const {
+  choice: palette,
+  index: paletteIndex,
+} = methods.sampleWithIndex(palettes)
 
 export function createTheme() {
   return {
@@ -107,6 +212,7 @@ export function createTheme() {
 function createPalette() {
   return {
     ...palette,
+    index: paletteIndex,
     rainbow: [
       '#ee9b00',
       '#ca6702',

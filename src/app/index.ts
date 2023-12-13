@@ -39,9 +39,10 @@ for (let i = 0; i < windowCount; i++) {
     .addTo(canvas)
 }
 
-const title = methods.sample(titles)
-const start = createStart({ options: { title }, theme })
+const penguinName = methods.sample(titles)
+const start = createStart({ options: { title: penguinName }, theme })
 const pingo = penguin({ theme, options: { canvas } })
+const hasToast = methods.random(0, 10) < 3
 
 start
   .dy(height - Number(start.height()))
@@ -49,10 +50,16 @@ start
 pingo
   .move(10, height - Number(start.height()) - 102)
 
-if (methods.random(0, 10) < 3) {
+if (hasToast) {
   const toast = createToast({ theme })
   setTimeout(() => toast.hide(), 30000)
   toast
     .move(width - Number(toast.width()) - 10, height - Number(toast.height()) - Number(start.height()) - 10)
     .addTo(canvas)
 }
+
+$fx.features({
+  'Penguin': penguinName,
+  'Has notification': hasToast,
+  'Palette': theme.palette.index,
+})
