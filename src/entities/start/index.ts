@@ -29,6 +29,7 @@ export function createStart({ theme, options }: StartProps) {
   group
     .text(options.title)
     .fill(theme.window.strokeOptions.color)
+    // @ts-expect-error incorrect css style name
     .css('user-select', 'none')
     .font({
       anchor: 'start',
@@ -42,6 +43,7 @@ export function createStart({ theme, options }: StartProps) {
   const time = group
     .text(getTimeText())
     .fill(theme.window.strokeOptions.color)
+    // @ts-expect-error incorrect css style name
     .css('user-select', 'none')
     .font({
       anchor: 'start',
